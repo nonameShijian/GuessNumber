@@ -12,7 +12,7 @@ public class GuessNumber {
             // 2.接受猜测数字
             // 4.每接受一个数字都比较一次大小
             while(chances > 0) {
-                System.out.println("你还有" + chances + "次机会");
+                System.out.println("你还有" + chances + "次机会(输入-1可结束本轮游戏)");
                 System.out.print("请输入1-100之间的整数:");
                 int guess;
                 try {
@@ -24,7 +24,10 @@ public class GuessNumber {
                 }
                 System.out.println("你输入的是：" + guess);
                 // 3.比较大小
-                if (answer > guess) {
+                if (guess == -1) {
+                    break;
+                }
+                else if (answer > guess) {
                     System.out.println("你猜小了");
                 } else if (answer < guess) {
                     System.out.println("你猜大了");
