@@ -14,7 +14,14 @@ public class GuessNumber {
             while(chances > 0) {
                 System.out.println("你还有" + chances + "次机会");
                 System.out.print("请输入1-100之间的整数:");
-                int guess = scan.nextInt();
+                int guess;
+                try {
+                    guess = scan.nextInt();
+                } catch (Exception e) {
+                    System.out.println("请输入合法数字");
+                    scan.next();
+                    continue;
+                }
                 System.out.println("你输入的是：" + guess);
                 // 3.比较大小
                 if (answer > guess) {
